@@ -4,21 +4,21 @@ const port = 3000;
 
 
 // importo middelware di gestione errore 500
-const errorHandler = require('./middlewares/errorsHandler') 
+const errorHandler = require('./middlewares/errorsHandler'); 
 
 // importo middelware di gestione errore 404
-const notFound = require('./middlewares/notFound') 
+const notFound = require('./middlewares/notFound'); 
 
 // Rotta di Home
 app.get('/', (req, res) =>{
     res.send("Benvenuto nella API della miei Film")
-})
+});
 
 //registra globalmente il middelware di gestione errore 500
-app.use(errorHandler)
+app.use(errorHandler);
 
 //registra globalmente il middelware di gestione chiamata su rotta inesistente
-app.use(notFound)
+app.use(notFound);
 
 // Listner
 app.listen(port, () => {
