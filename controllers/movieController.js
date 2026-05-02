@@ -1,3 +1,4 @@
+const connection = require('../data/db');
 
 function index(req, res){
     res.send("index dei film");
