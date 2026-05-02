@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// importo il router
+const movieRouter = require('./routers/movieRouter')
 
 // importo middelware di gestione errore 500
 const errorHandler = require('./middlewares/errorsHandler'); 
@@ -13,6 +15,9 @@ const notFound = require('./middlewares/notFound');
 app.get('/', (req, res) =>{
     res.send("Benvenuto nella API della miei Film")
 });
+
+// rotte di CRUD
+app.use("/api/movie", movieRouter)
 
 //registra globalmente il middelware di gestione errore 500
 app.use(errorHandler);
