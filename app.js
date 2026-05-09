@@ -19,6 +19,11 @@ const errorHandler = require('./middlewares/errorsHandler');
 // importo middelware di gestione errore 404
 const notFound = require('./middlewares/notFound'); 
 
+// importo middelware per path imgs
+const imagePath = require('./middlewares/imagePath')
+
+app.use(imagePath);
+
 app.use(express.static('public'));
 
 // Rotta di Home
