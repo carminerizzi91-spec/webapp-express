@@ -19,6 +19,8 @@ const errorHandler = require('./middlewares/errorsHandler');
 // importo middelware di gestione errore 404
 const notFound = require('./middlewares/notFound'); 
 
+app.use(express.static('public'));
+
 // Rotta di Home
 app.get('/', (req, res) =>{
     res.send("Benvenuto nella API della miei Film")
