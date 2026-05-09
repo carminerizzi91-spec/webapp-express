@@ -2,6 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// import cors middleware
+const cors = require("cors");
+
+// abilito dominio forntend
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 // importo il router
 const movieRouter = require('./routers/movieRouter')
 
