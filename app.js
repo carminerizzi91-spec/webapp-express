@@ -26,6 +26,8 @@ app.use(imagePath);
 
 app.use(express.static('public'));
 
+app.use(express.json());
+
 // Rotta di Home
 app.get('/', (req, res) =>{
     res.send("Benvenuto nella API della miei Film")
