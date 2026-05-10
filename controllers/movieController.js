@@ -50,7 +50,7 @@ function show(req, res) {
 };
 
 // inserimento di review specifica
-function storeReview(res, req) {
+function storeReview(req, res) {
     // copio l'Id dall'url
     const id = req.params.id
 
@@ -58,7 +58,7 @@ function storeReview(res, req) {
     const { text, name, vote } = req.body;
 
     // Query
-    const sql = 'INSERT INTO review (text, name, vote, movie_id) VALUES (?,?,?,?)'
+    const sql = 'INSERT INTO reviews (text, name, vote, movie_id) VALUES (?,?,?,?)'
 
     // chiamata esecuzione query recensione
     connection.query(sql, [text, name, vote, id], (err, reviewResult) => {
